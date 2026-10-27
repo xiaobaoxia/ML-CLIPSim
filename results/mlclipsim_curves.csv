@@ -1,0 +1,61 @@
+dataset,task,model,rate_point,bpp,metric,value
+ImageNet,classification,CLIP,1,0.079600,top1_accuracy_percent,58.410000
+ImageNet,classification,CLIP,2,0.200800,top1_accuracy_percent,64.090000
+ImageNet,classification,CLIP,3,0.438800,top1_accuracy_percent,66.270000
+ImageNet,classification,CLIP,4,0.653800,top1_accuracy_percent,67.050000
+ImageNet,classification,CLIP,5,0.961600,top1_accuracy_percent,67.550000
+COCO,object_detection,YOLO26m,1,0.053717,box_AP_percent,41.600000
+COCO,object_detection,YOLO26m,2,0.135341,box_AP_percent,47.200000
+COCO,object_detection,YOLO26m,3,0.312602,box_AP_percent,49.800000
+COCO,object_detection,YOLO26m,4,0.498601,box_AP_percent,50.400000
+COCO,object_detection,YOLO26m,5,0.802952,box_AP_percent,51.100000
+VOC,object_detection,Faster R-CNN,1,0.055137,AP50_percent,44.397800
+VOC,object_detection,Faster R-CNN,2,0.141293,AP50_percent,47.451700
+VOC,object_detection,Faster R-CNN,3,0.326375,AP50_percent,49.646900
+VOC,object_detection,Faster R-CNN,4,0.530198,AP50_percent,49.906900
+VOC,object_detection,Faster R-CNN,5,0.821798,AP50_percent,50.405600
+COCO,instance_segmentation,Mask R-CNN,1,0.053717,mask_AP_percent,29.300000
+COCO,instance_segmentation,Mask R-CNN,2,0.135341,mask_AP_percent,35.000000
+COCO,instance_segmentation,Mask R-CNN,3,0.312602,mask_AP_percent,38.000000
+COCO,instance_segmentation,Mask R-CNN,4,0.498601,mask_AP_percent,38.500000
+COCO,instance_segmentation,Mask R-CNN,5,0.802952,mask_AP_percent,39.300000
+COCO,semantic_segmentation,CLIPSeg,1,0.053717,mIoU_percent,41.500000
+COCO,semantic_segmentation,CLIPSeg,2,0.135341,mIoU_percent,42.340000
+COCO,semantic_segmentation,CLIPSeg,3,0.312602,mIoU_percent,42.720000
+COCO,semantic_segmentation,CLIPSeg,4,0.498601,mIoU_percent,42.900000
+COCO,semantic_segmentation,CLIPSeg,5,0.802952,mIoU_percent,42.940000
+COCO,object_detection,Grounding DINO,1,0.053717,box_AP_percent,36.100000
+COCO,object_detection,Grounding DINO,2,0.135341,box_AP_percent,42.000000
+COCO,object_detection,Grounding DINO,3,0.312602,box_AP_percent,44.700000
+COCO,object_detection,Grounding DINO,4,0.498601,box_AP_percent,45.300000
+COCO,object_detection,Grounding DINO,5,0.802952,box_AP_percent,46.000000
+SEEDBench_IMG,visual_question_answering,InternVL3-1B,1,0.057092,accuracy_percent,69.259400
+SEEDBench_IMG,visual_question_answering,InternVL3-1B,2,0.149167,accuracy_percent,69.941000
+SEEDBench_IMG,visual_question_answering,InternVL3-1B,3,0.345974,accuracy_percent,70.763100
+SEEDBench_IMG,visual_question_answering,InternVL3-1B,4,0.525529,accuracy_percent,70.945800
+SEEDBench_IMG,visual_question_answering,InternVL3-1B,5,0.759124,accuracy_percent,71.156500
+SEEDBench_IMG,visual_question_answering,Qwen2.5-VL-3B-Instruct,1,0.057092,accuracy_percent,72.013800
+SEEDBench_IMG,visual_question_answering,Qwen2.5-VL-3B-Instruct,2,0.149167,accuracy_percent,72.842900
+SEEDBench_IMG,visual_question_answering,Qwen2.5-VL-3B-Instruct,3,0.345974,accuracy_percent,73.665000
+SEEDBench_IMG,visual_question_answering,Qwen2.5-VL-3B-Instruct,4,0.525529,accuracy_percent,73.882800
+SEEDBench_IMG,visual_question_answering,Qwen2.5-VL-3B-Instruct,5,0.759124,accuracy_percent,73.960100
+POPE,hallucination_evaluation,InternVL3-1B,1,0.057225,F1_percent,86.553936
+POPE,hallucination_evaluation,InternVL3-1B,2,0.158723,F1_percent,88.216965
+POPE,hallucination_evaluation,InternVL3-1B,3,0.375539,F1_percent,89.006076
+POPE,hallucination_evaluation,InternVL3-1B,4,0.563770,F1_percent,88.950086
+POPE,hallucination_evaluation,InternVL3-1B,5,0.836353,F1_percent,89.195665
+POPE,hallucination_evaluation,Qwen2.5-VL-3B-Instruct,1,0.057225,F1_percent,81.449678
+POPE,hallucination_evaluation,Qwen2.5-VL-3B-Instruct,2,0.158723,F1_percent,84.233901
+POPE,hallucination_evaluation,Qwen2.5-VL-3B-Instruct,3,0.375539,F1_percent,84.645766
+POPE,hallucination_evaluation,Qwen2.5-VL-3B-Instruct,4,0.563770,F1_percent,85.651214
+POPE,hallucination_evaluation,Qwen2.5-VL-3B-Instruct,5,0.836353,F1_percent,85.588127
+Kodak,image_reconstruction,MLIC++,1,0.04960801866319445,PSNR_dB,22.41085338825852
+Kodak,image_reconstruction,MLIC++,2,0.13116115993923613,PSNR_dB,25.24755769079593
+Kodak,image_reconstruction,MLIC++,3,0.3138156467013889,PSNR_dB,28.915927484109105
+Kodak,image_reconstruction,MLIC++,4,0.516750759548611,PSNR_dB,30.865495770299542
+Kodak,image_reconstruction,MLIC++,5,0.7892150878906251,PSNR_dB,32.87268019414897
+Kodak,image_reconstruction,MLIC++,1,0.04960801866319445,MS-SSIM,0.7845698272188505
+Kodak,image_reconstruction,MLIC++,2,0.13116115993923613,MS-SSIM,0.8878860647479693
+Kodak,image_reconstruction,MLIC++,3,0.3138156467013889,MS-SSIM,0.9525353237986565
+Kodak,image_reconstruction,MLIC++,4,0.516750759548611,MS-SSIM,0.9747108817100525
+Kodak,image_reconstruction,MLIC++,5,0.7892150878906251,MS-SSIM,0.9855884139736494

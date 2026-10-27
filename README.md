@@ -91,6 +91,10 @@ its model dependencies. Choose `InternVL3-1B` or `Qwen2.5-VL-3B-Instruct`, and
 
 Downstream curves from the paper. Click a plot for its vector PDF.
 
+[ML-CLIPSim curve data (CSV)](results/mlclipsim_curves.csv): five rate points per task;
+BPP is bits per pixel. Downstream values follow the paper; Kodak values are from
+the released checkpoints.
+
 <table>
 <tr>
 <td width="50%" align="center"><a href="figures/imagenet_clip.pdf"><img src="figures/imagenet_clip.png" alt="ImageNet · CLIP" width="100%"></a></td>

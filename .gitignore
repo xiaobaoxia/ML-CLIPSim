@@ -76,3 +76,6 @@ dataset/pcmp/psnr.json
 dataset/pcmp/split/
 dataset/pcmp/records/
 *.zip
+
+# Published curve data
+!results/mlclipsim_curves.csv
