@@ -87,10 +87,41 @@ its model dependencies. Choose `InternVL3-1B` or `Qwen2.5-VL-3B-Instruct`, and
 `POPE` or `SEEDBench_IMG`. Use `--model-path` for local model weights,
 `--quality 1` through `5` for codec rate points, and `--limit N` for a subset.
 
-Results reported in the paper:
+## Results
 
-![ImageNet, VOC and COCO tasks](figures/downstream_tasks.png)
-![SEEDBench and POPE](figures/vlm_tasks.png)
+Downstream curves from the paper. Click a plot for its vector PDF.
+
+<table>
+<tr>
+<td width="50%" align="center"><a href="figures/imagenet_clip.pdf"><img src="figures/imagenet_clip.png" alt="ImageNet · CLIP" width="100%"></a></td>
+<td width="50%" align="center"><a href="figures/coco_yolo.pdf"><img src="figures/coco_yolo.png" alt="COCO · YOLO26m" width="100%"></a></td>
+</tr>
+<tr>
+<td width="50%" align="center"><a href="figures/voc_faster_rcnn.pdf"><img src="figures/voc_faster_rcnn.png" alt="VOC · Faster R-CNN" width="100%"></a></td>
+<td width="50%" align="center"><a href="figures/coco_mask_rcnn.pdf"><img src="figures/coco_mask_rcnn.png" alt="COCO · Mask R-CNN" width="100%"></a></td>
+</tr>
+<tr>
+<td width="50%" align="center"><a href="figures/coco_clipseg.pdf"><img src="figures/coco_clipseg.png" alt="COCO · CLIPSeg" width="100%"></a></td>
+<td width="50%" align="center"><a href="figures/coco_grounding_dino.pdf"><img src="figures/coco_grounding_dino.png" alt="COCO · Grounding DINO" width="100%"></a></td>
+</tr>
+<tr>
+<td width="50%" align="center"><a href="figures/seedbench_internvl.pdf"><img src="figures/seedbench_internvl.png" alt="SEEDBench · InternVL3-1B" width="100%"></a></td>
+<td width="50%" align="center"><a href="figures/seedbench_qwen.pdf"><img src="figures/seedbench_qwen.png" alt="SEEDBench · Qwen2.5-VL-3B" width="100%"></a></td>
+</tr>
+<tr>
+<td width="50%" align="center"><a href="figures/pope_internvl.pdf"><img src="figures/pope_internvl.png" alt="POPE · InternVL3-1B" width="100%"></a></td>
+<td width="50%" align="center"><a href="figures/pope_qwen.pdf"><img src="figures/pope_qwen.png" alt="POPE · Qwen2.5-VL-3B" width="100%"></a></td>
+</tr>
+</table>
+
+Kodak results with the released five codec checkpoints:
+
+<table>
+<tr>
+<td width="50%" align="center"><a href="figures/kodak_psnr.pdf"><img src="figures/kodak_psnr.png" alt="Kodak PSNR" width="100%"></a></td>
+<td width="50%" align="center"><a href="figures/kodak_msssim.pdf"><img src="figures/kodak_msssim.png" alt="Kodak MS-SSIM" width="100%"></a></td>
+</tr>
+</table>
 
 ## Data and metric training
 
