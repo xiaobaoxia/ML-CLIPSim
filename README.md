@@ -156,8 +156,8 @@ python mlcs_metric/make_mv_loss.py --dist_root outputs/images --out_dir outputs/
 Rebuild supplied labels with `python scripts/rebuild_dataset_labels.py --output outputs/labels`.
 Use each script's `--help` for additional options.
 
-## Citation and license
+## License
 
-See [CITATION.cff](CITATION.cff). Code: Apache-2.0; data retains its original licenses.
+Code: Apache-2.0; data retains its original licenses.
 Based on [MLIC++](https://github.com/JiangWeibeta/MLIC) and
 [OpenAI CLIP](https://github.com/openai/CLIP). See [NOTICE](NOTICE).

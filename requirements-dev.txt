@@ -1,3 +1,0 @@
-pytest>=7
-build>=1
-ruff>=0.6
