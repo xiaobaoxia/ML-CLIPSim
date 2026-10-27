@@ -10,11 +10,13 @@ Python 3.10+ and PyTorch are required. From the source checkout:
 pip install .
 ```
 
-Or install the wheel downloaded from the `v0.1.0` Release:
+Or install directly from the GitHub Release:
 
 ```bash
-pip install mlclipsim-0.1.0-py3-none-any.whl
+pip install "https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlclipsim-0.1.0-py3-none-any.whl"
 ```
+
+[Download the wheel manually](https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlclipsim-0.1.0-py3-none-any.whl) · [All release assets](https://github.com/xiaobaoxia/ML-CLIPSim/releases/tag/v0.1.0)
 
 The Python package is named `mlclipsim` and contains only the metric and its
 aggregation weights. CLIP ViT-B/16 downloads on first use.
