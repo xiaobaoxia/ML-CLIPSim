@@ -57,8 +57,19 @@ repository after installing their dependencies:
 pip install -r requirements-research.txt
 ```
 
-Download `mlicpp_ml_clipsim_q1.pt`–`mlicpp_ml_clipsim_q5.pt` from the `v0.1.0` Release into
-`weights/codec/`. Their lambdas are `0.6, 2, 6, 10, 18`.
+Pretrained MLIC++ models optimized with ML-CLIPSim. Download the checkpoints
+below into `weights/codec/`:
+
+| Quality | Lambda | Checkpoint |
+| --- | --- | --- |
+| 1 | 0.6 | [mlicpp_ml_clipsim_q1.pt](https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlicpp_ml_clipsim_q1.pt) |
+| 2 | 2 | [mlicpp_ml_clipsim_q2.pt](https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlicpp_ml_clipsim_q2.pt) |
+| 3 | 6 | [mlicpp_ml_clipsim_q3.pt](https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlicpp_ml_clipsim_q3.pt) |
+| 4 | 10 | [mlicpp_ml_clipsim_q4.pt](https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlicpp_ml_clipsim_q4.pt) |
+| 5 | 18 | [mlicpp_ml_clipsim_q5.pt](https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlicpp_ml_clipsim_q5.pt) |
+
+All five checkpoints are also listed under [v0.1.0 Release assets](https://github.com/xiaobaoxia/ML-CLIPSim/releases/tag/v0.1.0).
+
 Initialize training from a compatible MSE checkpoint:
 
 ```bash
