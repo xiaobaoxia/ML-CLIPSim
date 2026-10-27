@@ -1,0 +1,50 @@
+{
+  "source": "Validation metrics from the five saved metric training checkpoints.",
+  "epochs": [
+    {
+      "epoch_zero_based": 0,
+      "metrics": {
+        "hard_acc": 0.8247643203104708,
+        "soft_L1": 0.2705788831003484,
+        "mean_margin": 0.0493739796720467
+      },
+      "best_acc_so_far": 0.8247643203104708
+    },
+    {
+      "epoch_zero_based": 1,
+      "metrics": {
+        "hard_acc": 0.8262005531024156,
+        "soft_L1": 0.26778546284487287,
+        "mean_margin": 0.05196430750431553
+      },
+      "best_acc_so_far": 0.8262005531024156
+    },
+    {
+      "epoch_zero_based": 2,
+      "metrics": {
+        "hard_acc": 0.8273923207382847,
+        "soft_L1": 0.2656207828111546,
+        "mean_margin": 0.05403698613013224
+      },
+      "best_acc_so_far": 0.8273923207382847
+    },
+    {
+      "epoch_zero_based": 3,
+      "metrics": {
+        "hard_acc": 0.8279882045562194,
+        "soft_L1": 0.26402168667794207,
+        "mean_margin": 0.055615891226342466
+      },
+      "best_acc_so_far": 0.8279882045562194
+    },
+    {
+      "epoch_zero_based": 4,
+      "metrics": {
+        "hard_acc": 0.8284007395070971,
+        "soft_L1": 0.26286789238860764,
+        "mean_margin": 0.05678334583474627
+      },
+      "best_acc_so_far": 0.8284007395070971
+    }
+  ]
+}

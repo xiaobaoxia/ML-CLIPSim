@@ -1,0 +1,41 @@
+{
+  "model": "MLIC++",
+  "objective": "ML-CLIPSim",
+  "checkpoints": [
+    {
+      "quality": 1,
+      "filename": "mlicpp_ml_clipsim_q1.pt",
+      "lambda_mlcs": 0.6,
+      "size_bytes": 468185617,
+      "sha256": "1dffd1b0cd3e921a7dfa5173b2bd2d1011662fff1bb084c6c03a2e59e4fce5d5"
+    },
+    {
+      "quality": 2,
+      "filename": "mlicpp_ml_clipsim_q2.pt",
+      "lambda_mlcs": 2.0,
+      "size_bytes": 468181009,
+      "sha256": "7ce74fa9b722c37328194dbf52aeff952fb6e71058cf4f67a865ea115c4e32a3"
+    },
+    {
+      "quality": 3,
+      "filename": "mlicpp_ml_clipsim_q3.pt",
+      "lambda_mlcs": 6.0,
+      "size_bytes": 468181777,
+      "sha256": "3c6e6b6d3222cd2e7750a131ecf07fdfa39af026cf5ded0f237e464f07d07a6b"
+    },
+    {
+      "quality": 4,
+      "filename": "mlicpp_ml_clipsim_q4.pt",
+      "lambda_mlcs": 10.0,
+      "size_bytes": 468217873,
+      "sha256": "359b0c9f377f3419a991ea2484903159a5182263f4b30848b6f2633ab6f6fbd9"
+    },
+    {
+      "quality": 5,
+      "filename": "mlicpp_ml_clipsim_q5.pt",
+      "lambda_mlcs": 18.0,
+      "size_bytes": 468173329,
+      "sha256": "5015eb23ab798ac2ef5a817a7623f4e3734ddf0650b1505cf3d21d58ca273afe"
+    }
+  ]
+}

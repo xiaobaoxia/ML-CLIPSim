@@ -1,0 +1,78 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+
+# Logs & notebooks
+*.log
+.ipynb_checkpoints/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+backups/
+
+# Only the lightweight metric checkpoint belongs in Git.
+*.pt
+!weights/ML-CLIPSim_ViTB16.pt
+!src/mlclipsim/weights/*.pt
+*.pth
+*.pth.tar
+*.ckpt
+*.safetensors
+*.bin
+*.tar
+*.onnx
+
+# Generated data & experiment outputs
+distorted_samples/
+mv_loss_out*/
+caches/
+checkpoints*/
+runs/
+outputs/
+paper_figures*/
+pred_results*/
+vis_*/
+recon_samples/
+CE_result/
+results_downstream/
+
+# Media outputs
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.csv
+
+# Local datasets (user-provided)
+data/
+datasets/ImageNet/
+lists/*.txt
+!lists/*.example
+
+# Third-party eval (clone separately)
+VLMEvalKit/
+
+# OS
+.DS_Store
+Thumbs.db
+.ruff_cache/
+paths.local.yaml
+
+# Published figures
+!figures/*.png
+!figures/*.pdf
+
+# PCMP Release payloads (retain only manifests and small reproduction metadata in Git)
+dataset/pcmp/images/
+dataset/pcmp/labels.json
+dataset/pcmp/pairs.json
+dataset/pcmp/scores.json
+dataset/pcmp/psnr.json
+dataset/pcmp/split/
+dataset/pcmp/records/
+*.zip

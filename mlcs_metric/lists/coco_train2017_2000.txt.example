@@ -1,0 +1,6 @@
+# Example COCO image list (one absolute path per line).
+# Regenerate on your machine:
+#   python mlcs_metric/gen_coco_list.py --coco_root /path/to/coco2017/images --n 2000 --seed 123
+/path/to/coco2017/images/train2017/000000467723.jpg
+/path/to/coco2017/images/train2017/000000236162.jpg
+/path/to/coco2017/images/train2017/000000472796.jpg

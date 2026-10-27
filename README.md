@@ -1,0 +1,128 @@
+# ML-CLIPSim
+
+Multi-Layer CLIP Similarity for Machine-Oriented Image Quality.
+
+## Install the metric
+
+Python 3.10+ and PyTorch are required. From the source checkout:
+
+```bash
+pip install .
+```
+
+Or install the wheel downloaded from the `v0.1.0` Release:
+
+```bash
+pip install mlclipsim-0.1.0-py3-none-any.whl
+```
+
+The Python package is named `mlclipsim` and contains only the metric and its
+aggregation weights. CLIP ViT-B/16 downloads on first use.
+
+## Use as a loss
+
+Inputs are RGB float tensors `[B, 3, H, W]` in `[0, 1]`.
+
+```python
+from mlclipsim import MLCLIPSimLoss
+
+criterion = MLCLIPSimLoss(device="cuda")
+reconstruction = model(reference)
+loss = criterion(reference, reconstruction)
+loss.backward()
+```
+
+The loss is `1 - ML-CLIPSim`, averaged over the batch. Metric parameters stay
+frozen; gradients flow to `reconstruction`. To include a bitrate term, use
+`loss = rate_loss + lambda_mlcs * criterion(reference, reconstruction)`.
+
+For similarity scores (higher is better):
+
+```python
+from mlclipsim import MLCLIPSim
+metric = MLCLIPSim.from_pretrained(device="cuda")
+score = metric(reference, reconstruction)
+```
+
+Offline loading: pass `clip_checkpoint="/path/to/ViT-B-16.pt"` to either loader.
+
+## MLIC++ training and evaluation
+
+These are source scripts, separate from the Python package. Run them from this
+repository after installing their dependencies:
+
+```bash
+pip install -r requirements-research.txt
+```
+
+Download `mlicpp_ml_clipsim_q1.pt`–`mlicpp_ml_clipsim_q5.pt` from the `v0.1.0` Release into
+`weights/codec/`. Their lambdas are `0.6, 2, 6, 10, 18`.
+Initialize training from a compatible MSE checkpoint:
+
+```bash
+python scripts/train_mlic.py --objective mlclipsim --lambda 2 \
+  --checkpoint /path/to/mse-checkpoint.pt \
+  --train-dir /path/to/train --val-dir /path/to/val --output-dir runs/codec
+python scripts/evaluate_kodak.py --data /path/to/kodak \
+  --weights-root weights/codec --device cuda --report outputs/kodak.json
+```
+
+Use `--objective mse` to train an MSE initialization yourself.
+
+## Downstream tasks
+
+```bash
+python scripts/evaluate_imagenet.py --data /path/to/imagenet --quality 1 --output results/imagenet/q1
+python scripts/evaluate_voc.py --data /path/to/VOC2007 --quality 1 --output results/voc/q1
+python scripts/evaluate_coco.py --images /path/to/coco/val2017 \
+  --annotations /path/to/instances_val2017.json \
+  --tasks yolo maskrcnn clipseg groundingdino --quality 1 --output results/coco/q1
+python scripts/evaluate_vlm.py --vlmeval-root /path/to/VLMEvalKit \
+  --dataset POPE --model InternVL3-1B --quality 1 --output results/pope/internvl/q1
+```
+
+VOC needs [Detectron2](https://github.com/facebookresearch/detectron2).
+VLM evaluation needs [VLMEvalKit](https://github.com/open-compass/VLMEvalKit) and
+its model dependencies. Choose `InternVL3-1B` or `Qwen2.5-VL-3B-Instruct`, and
+`POPE` or `SEEDBench_IMG`. Use `--model-path` for local model weights,
+`--quality 1` through `5` for codec rate points, and `--limit N` for a subset.
+
+Results reported in the paper:
+
+![ImageNet, VOC and COCO tasks](figures/downstream_tasks.png)
+![SEEDBench and POPE](figures/vlm_tasks.png)
+
+## Data and metric training
+
+PCMP data is distributed separately via Google Drive: 2,000 references,
+66 distortion points and 327,241 labeled pairs. Extract `pcmp-annotations.zip`
+and all 48 `pcmp-images-*.zip` files as follows:
+
+```bash
+mkdir -p dataset
+python -m zipfile -e /path/to/pcmp-annotations.zip dataset
+for part in /path/to/pcmp-images-*.zip; do
+  python -m zipfile -e "$part" dataset
+done
+python scripts/verify_dataset.py --full-images
+python mlcs_metric/train.py --device cuda
+```
+
+Keep the supplied train/validation split; omit `--force_split`. Defaults: five
+epochs, batch 64, learning rate `2e-4`, seed 123. Outputs: `runs/metric/`.
+To create distortions and scores from COCO originals:
+
+```bash
+python scripts/prepare_reference_list.py --coco-root /path/to/coco/train2017 --output refs.txt
+python mlcs_metric/generate_distortions.py --img_list refs.txt --out_root outputs/images
+python mlcs_metric/make_mv_loss.py --dist_root outputs/images --out_dir outputs/labels --psnr_tol 0.5 --force_odd
+```
+
+Rebuild supplied labels with `python scripts/rebuild_dataset_labels.py --output outputs/labels`.
+Use each script's `--help` for additional options.
+
+## Citation and license
+
+See [CITATION.cff](CITATION.cff). Code: Apache-2.0; data retains its original licenses.
+Based on [MLIC++](https://github.com/JiangWeibeta/MLIC) and
+[OpenAI CLIP](https://github.com/openai/CLIP). See [NOTICE](NOTICE).

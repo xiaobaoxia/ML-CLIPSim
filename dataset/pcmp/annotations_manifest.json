@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "path": "labels.json",
+      "size_bytes": 452990335,
+      "sha256": "6b367390c9412241957f1214cfeeea500acd0180b2dc832af9204473e533f0b9"
+    },
+    {
+      "path": "pairs.json",
+      "size_bytes": 28477941,
+      "sha256": "ff4a7c73c8eee08ed2f94c712a5d1a3d5f0aa665f5ea1cd49fe9f1dd3475f71e"
+    },
+    {
+      "path": "scores.json",
+      "size_bytes": 54856781,
+      "sha256": "8491a25f7594f00f3ca933172dcdc8c7b6de0412a5443c45c7afea5b1bb22f21"
+    },
+    {
+      "path": "split/labels_train.json",
+      "size_bytes": 363693046,
+      "sha256": "de6f6f7d63238c61a49a2202b55644d80fe90983ccfc81b2f27f98d69ee8b73f"
+    },
+    {
+      "path": "split/labels_val.json",
+      "size_bytes": 90924694,
+      "sha256": "a077465872c3cc10c898c2837458665bc2ee77c3e42027a081a880e5bd684a8e"
+    },
+    {
+      "path": "records/scores_initial.json",
+      "size_bytes": 55225795,
+      "sha256": "e0b9267851439c3b04fef71267a9e335fca0d8d0c916940805bc7895c4677808"
+    },
+    {
+      "path": "records/scores_detection.json",
+      "size_bytes": 17874510,
+      "sha256": "b6af059222679810c7d92ef87302579b800f63543447b530dc6d82585a2d0430"
+    },
+    {
+      "path": "records/scores_segmentation.json",
+      "size_bytes": 18678688,
+      "sha256": "dd9df58efd08d93040dac910b27e0d3e31cca435db21649ba530530fcd67f5db"
+    },
+    {
+      "path": "records/split_history.json",
+      "size_bytes": 829,
+      "sha256": "b40b01ad72e669fb3443e4819b40d319acdaa37a2d0598711fe51a5dfebb0e51"
+    },
+    {
+      "path": "records/point_stats.json",
+      "size_bytes": 14233,
+      "sha256": "70765fc80aba72ee0e3f6739d246ad12d18ce416999486069be7eba348b848dc"
+    },
+    {
+      "path": "records/per_image_stats.jsonl",
+      "size_bytes": 23328324,
+      "sha256": "8c4dbe55aff193bfa2d72396a1ea1ba069f36fd818e9afdd970ca17fad9ece27"
+    },
+    {
+      "path": "psnr.json",
+      "size_bytes": 5217924,
+      "sha256": "76091372ae12f02699399a080ec2bd86b139ae9d30e5aacbc4a9e4f2d8efa1fd"
+    },
+    {
+      "path": "records/labels_initial.json",
+      "size_bytes": 454893835,
+      "sha256": "20549d62118c4850fad951f84eadad04408b7c02abf9e2ea887e0f597d6a17ed"
+    },
+    {
+      "path": "records/generation.txt",
+      "size_bytes": 167885,
+      "sha256": "20e4c0e789e93c735eb8aa351a975efa17708ae82d54bfb120110b9f3de14687"
+    },
+    {
+      "path": "records/detection_scoring.txt",
+      "size_bytes": 11238378,
+      "sha256": "a54d004c876689fb366a575c33bebd8b590979959893ea565c3da82022760022"
+    },
+    {
+      "path": "records/segmentation_scoring.txt",
+      "size_bytes": 9991845,
+      "sha256": "2997a740151b19c9b701a840a1dba1e2bc777a402a028de74267f5fe9c7bb731"
+    }
+  ]
+}

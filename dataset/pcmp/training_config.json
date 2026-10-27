@@ -1,0 +1,23 @@
+{
+  "label_json": "dataset/pcmp/labels.json",
+  "split_out_dir": "dataset/pcmp/split",
+  "dist_root": "dataset/pcmp/images",
+  "train_ratio": 0.8,
+  "seed": 123,
+  "force_split": false,
+  "batch_size": 64,
+  "num_workers": 4,
+  "neutral_ratio": 0.0,
+  "epochs": 5,
+  "lr": 0.0002,
+  "device": "cuda",
+  "use_scheduler": false,
+  "warmup_ratio": 0.01,
+  "min_lr_ratio": 0.05,
+  "temperature": 20.0,
+  "ckpt_dir": "runs/metric",
+  "ckpt_name": "best.pth",
+  "save_every_epoch": true,
+  "save_last": true,
+  "resume": ""
+}

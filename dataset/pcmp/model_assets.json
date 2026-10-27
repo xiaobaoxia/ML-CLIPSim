@@ -1,0 +1,104 @@
+{
+  "files": [
+    {
+      "filename": "yolov8n.pt",
+      "sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "size_bytes": 6549796
+    },
+    {
+      "filename": "bmshj2018-hyperprior-1-7eb97409.pth.tar",
+      "sha256": "7eb97409f2dcdd46afdd3cab13d288b76aa787dc74cfc4794988aa7504bb71fe",
+      "size_bytes": 21148301
+    },
+    {
+      "filename": "bmshj2018-hyperprior-2-93677231.pth.tar",
+      "sha256": "9367723108465d5dc3b5471fd3436a39eef8eca15e9329589afa9b6d272bb98f",
+      "size_bytes": 21152397
+    },
+    {
+      "filename": "bmshj2018-hyperprior-3-6d87be32.pth.tar",
+      "sha256": "6d87be32fcd1b2649edf01b6112acfcbb40a9b17088ed5030d0a310de58c430c",
+      "size_bytes": 21162125
+    },
+    {
+      "filename": "bmshj2018-hyperprior-4-de1b779c.pth.tar",
+      "sha256": "de1b779c71f3e8ebe761ab61a5cf2365d5f85d65da9bfb2bbc1e129eb233a1a2",
+      "size_bytes": 21169293
+    },
+    {
+      "filename": "bmshj2018-hyperprior-5-f8b614e1.pth.tar",
+      "sha256": "f8b614e1147c05d4f09cf73eb21d151af5c90747f53648ef78384461d83c395b",
+      "size_bytes": 21180045
+    },
+    {
+      "filename": "bmshj2018-hyperprior-6-1ab9c41e.pth.tar",
+      "sha256": "1ab9c41ea828a64fe41d4571e8b1c2ae2ee53aa0ba369244935208038c43a585",
+      "size_bytes": 48190101
+    },
+    {
+      "filename": "cheng2020_attn-mse-1-465f2b64.pth.tar",
+      "sha256": "465f2b649c3fa5c67cf19f337306fc53efc4a91b6ac465e5506278b5fc997955",
+      "size_bytes": 56950481
+    },
+    {
+      "filename": "cheng2020_attn-mse-2-e0805385.pth.tar",
+      "sha256": "e080538589a7042ff51fd6596e56d98a08850dd08a5d37428b5d479fde47628d",
+      "size_bytes": 56954577
+    },
+    {
+      "filename": "cheng2020_attn-mse-3-2d07bbdf.pth.tar",
+      "sha256": "2d07bbdfffd968882c9468cd9434b429d548093a546778608c50fdb8e42d0289",
+      "size_bytes": 56956625
+    },
+    {
+      "filename": "cheng2020_attn-mse-4-f7b0ccf2.pth.tar",
+      "sha256": "f7b0ccf2864dd9b4c7a79f35414bab0d12a6d7293a3c3e86bf98304bfcff33d5",
+      "size_bytes": 126870033
+    },
+    {
+      "filename": "cheng2020_attn-mse-5-26c8920e.pth.tar",
+      "sha256": "26c8920ef2cb590ea08ecef66b7a31afa01f237735a8c4dea20e805ef4c100e5",
+      "size_bytes": 126873105
+    },
+    {
+      "filename": "cheng2020_attn-mse-6-730501f2.pth.tar",
+      "sha256": "730501f27084adcd8aa191d13d3dedab5d2b5a4c01b0edacd9ae397d533ebe02",
+      "size_bytes": 126883857
+    },
+    {
+      "filename": "convnext_tiny-983f1562.pth",
+      "sha256": "983f1562536e84ff750a1576fb08e54de751dbf2e17c0d8a4a13704341fdcd3d",
+      "size_bytes": 114419221
+    },
+    {
+      "filename": "deeplabv3_resnet50_coco-cd0a2569.pth",
+      "sha256": "cd0a25694c4a0f7106b38f4938bf90a874f2f241cc410b8f63c7024399538f06",
+      "size_bytes": 168312152
+    },
+    {
+      "filename": "fasterrcnn_resnet50_fpn_v2_coco-dd69338a.pth",
+      "sha256": "dd69338a24b8d7381807e247652bdc356325bcbaf1cd3e092e00e0a1a58706bf",
+      "size_bytes": 175221657
+    },
+    {
+      "filename": "maskrcnn_resnet50_fpn_v2_coco-73cbd019.pth",
+      "sha256": "73cbd0190fcbe3ba339921fbce2c3a0b6bb9126c9a133c85e43a2a8e060a109e",
+      "size_bytes": 185828065
+    },
+    {
+      "filename": "resnet50-0676ba61.pth",
+      "sha256": "0676ba61b6795bbe1773cffd859882e5e297624d384b6993f7c9e683e722fb8a",
+      "size_bytes": 102530333
+    },
+    {
+      "filename": "resnet50-11ad3fa6.pth",
+      "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+      "size_bytes": 102540417
+    },
+    {
+      "filename": "vit_b_16-c867db91.pth",
+      "sha256": "c867db91d3e12c6cbadabb610d73c24a546bf82d8c03a9fea34f43a712ddb0e9",
+      "size_bytes": 346328529
+    }
+  ]
+}

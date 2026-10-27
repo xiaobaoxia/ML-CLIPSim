@@ -1,0 +1,13 @@
+ML-CLIPSim
+Copyright 2026 ML-CLIPSim authors
+
+The research codec implementation includes code adapted from MLIC / MLIC++:
+https://github.com/JiangWeibeta/MLIC
+Copyright the respective MLIC / MLIC++ contributors.
+The upstream implementation is licensed under the Apache License, Version 2.0.
+
+ML-CLIPSim uses the OpenAI CLIP visual encoder at runtime:
+https://github.com/openai/CLIP
+Copyright OpenAI and the respective contributors.
+
+See individual dependency distributions for their complete license texts.

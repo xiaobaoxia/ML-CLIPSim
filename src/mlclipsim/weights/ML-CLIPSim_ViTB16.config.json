@@ -1,0 +1,24 @@
+{
+  "format_version": 1,
+  "checkpoint_sha256": "65e6edf40919be6a71fd6584d9cba9de08eda4953e4815ffe2ec3a7243a96fd0",
+  "model": "ML-CLIPSim",
+  "backbone": "ViT-B/16",
+  "clip_implementation": "openai/CLIP",
+  "input_size": 224,
+  "resize_mode": "bicubic",
+  "layers": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  "layer_groups": [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11]],
+  "patch_aggregation": "mean",
+  "use_cls_tokens": false,
+  "use_attention_weighting": false,
+  "tau_group": 2.0,
+  "tau_gate": 2.0,
+  "training": {
+    "dataset": "PCMP built from 2000 COCO train2017 reference images",
+    "epochs": 5,
+    "pairwise_temperature": 20.0,
+    "validation_hard_accuracy": 0.8284007395070971
+  },
+  "input": "RGB float tensor [B, 3, H, W] in [0, 1]",
+  "output": "one similarity score per image; higher is better"
+}
