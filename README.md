@@ -10,13 +10,13 @@ Python 3.10+ and PyTorch are required. From the source checkout:
 pip install .
 ```
 
-Or install directly from the GitHub Release:
+Or install directly:
 
 ```bash
 pip install "https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlclipsim-0.1.0-py3-none-any.whl"
 ```
 
-[Download the wheel manually](https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlclipsim-0.1.0-py3-none-any.whl) · [All release assets](https://github.com/xiaobaoxia/ML-CLIPSim/releases/tag/v0.1.0)
+[Download the wheel manually](https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlclipsim-0.1.0-py3-none-any.whl)
 
 The Python package is named `mlclipsim` and contains only the metric and its
 aggregation weights. CLIP ViT-B/16 downloads on first use.
@@ -68,7 +68,6 @@ below into `weights/codec/`:
 | 4 | 10 | [mlicpp_ml_clipsim_q4.pt](https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlicpp_ml_clipsim_q4.pt) |
 | 5 | 18 | [mlicpp_ml_clipsim_q5.pt](https://github.com/xiaobaoxia/ML-CLIPSim/releases/download/v0.1.0/mlicpp_ml_clipsim_q5.pt) |
 
-All five checkpoints are also listed under [v0.1.0 Release assets](https://github.com/xiaobaoxia/ML-CLIPSim/releases/tag/v0.1.0).
 
 Initialize training from a compatible MSE checkpoint:
 
