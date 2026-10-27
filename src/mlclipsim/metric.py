@@ -230,7 +230,6 @@ class MLCLIPSim(nn.Module):
             per_layer = group_weights[group_index] / len(indices)
             for index in indices:
                 layer_weights[index] = per_layer
-        # Preserve the released implementation exactly.
         return layer_weights / (layer_weights.sum() + 1e-6)
 
     def forward(self, reference: Tensor, candidate: Tensor) -> Tensor:

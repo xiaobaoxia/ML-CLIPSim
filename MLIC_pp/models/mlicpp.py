@@ -67,12 +67,10 @@ class MLICPlusPlus(CompressionModel):
 
         # Latent Residual Prediction
         self.lrp_anchor = nn.ModuleList(
-            # LatentResidualPrediction(in_dim=M + (i + 1) * slice_ch, out_dim=slice_ch)
             LatentResidualPredictionOld(in_dim=M + (i + 1) * slice_ch, out_dim=slice_ch)
             for i in range(slice_num)
         )
         self.lrp_nonanchor = nn.ModuleList(
-            # LatentResidualPrediction(in_dim=M + (i + 1) * slice_ch, out_dim=slice_ch)
             LatentResidualPredictionOld(in_dim=M + (i + 1) * slice_ch, out_dim=slice_ch)
             for i in range(slice_num)
         )

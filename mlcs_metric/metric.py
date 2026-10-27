@@ -18,15 +18,6 @@ class CLIPMultiLayerMetric(nn.Module):
     """
     CLIP multi-layer token similarity score (higher is better).
 
-    This version adds:
-      1) Grouped layer weights (early/mid/late) to avoid one-hot single-layer collapse.
-      2) Attention-weighted patch similarity using a semantic proxy:
-         CLS-to-patch affinity on REF tokens (no CLIP source patch required).
-      3) Bounded convex gate between token score and global CLIP cosine.
-
-    Intended usage:
-      - Train metric on machine-IQA: learn group_weight/global_weight/(optional)attn_mix_logit
-      - Freeze metric and train codec with loss = -(score.mean()) or logistic loss
     """
 
     def __init__(
@@ -146,7 +137,6 @@ class CLIPMultiLayerMetric(nn.Module):
             return groups
 
         # fixed12 mode: group by global layer id ranges (0-3,4-7,8-11) intersect with selected layers
-        # (works best for ViT-B/16 with 12 layers)
         fixed_ranges = [(0, 3), (4, 7), (8, 11)]
         groups = []
         for a, b in fixed_ranges:
@@ -234,11 +224,11 @@ class CLIPMultiLayerMetric(nn.Module):
         z = (affinity - aff_mean) / aff_std
 
         # (3) sharper softmax
-        tau = getattr(self, "attn_tau", 0.3)  # suggest start 0.3
+        tau = getattr(self, "attn_tau", 0.3)
         a = torch.softmax(z / max(tau, 1e-6), dim=1)
 
         # optional gamma sharpening
-        gamma = getattr(self, "attn_gamma", 2.0)  # suggest start 2.0
+        gamma = getattr(self, "attn_gamma", 2.0)
         if abs(gamma - 1.0) > 1e-6:
             a = a.clamp_min(1e-8).pow(gamma)
             a = a / (a.sum(dim=1, keepdim=True) + 1e-6)
@@ -385,7 +375,7 @@ if __name__ == "__main__":
         tau_group=3.0,
         tau_gate=2.0,
         group_mode="fixed12",      # (0-3)(4-7)(8-11)
-        group_min=0.00,            # set 0.05 if you want to force each group >=5%
+        group_min=0.00,
         use_attn_weight=True,
         attn_from_layer=-1,
         attn_tau=1.0,

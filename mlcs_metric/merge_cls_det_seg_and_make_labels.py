@@ -27,11 +27,9 @@ OUT_DIR = "mv_loss_out2000"
 DEVICE = "cuda"
 FORCE_ODD = True
 
-# old data
 OLD_CLS_SCORES_PATH = os.path.join(OUT_DIR, "scores.json")
 OLD_PAIRS_PATH = os.path.join(OUT_DIR, "pairs.json")
 
-# newly generated det / seg
 DET_SCORES_PATH = os.path.join(OUT_DIR, "scores_det_only.json")
 SEG_SCORES_PATH = os.path.join(OUT_DIR, "scores_seg_only.json")
 
@@ -251,7 +249,6 @@ def main():
             if pid in seg_scores and k in seg_scores[pid] and "seg" in seg_scores[pid][k]:
                 merged[pid][k]["seg"] = seg_scores[pid][k]["seg"]
 
-    # still need psnr_dict only for writing label metadata
     psnr = compute_psnr_table(
         dist_dir,
         point_ids,
@@ -260,7 +257,6 @@ def main():
         os.path.join(dist_dir, "psnr.json")
     )
 
-    # IMPORTANT: reuse old pairs, do NOT resample
     labels = make_labels_from_loss(
         old_pairs,
         merged,

@@ -2,7 +2,7 @@
 """Evaluate the public metric using explicit FR-IQA image/MOS CSV rows.
 
 Required columns: ref_path, dist_path, raw_target. Reference features are cached;
-the aggregation formula is identical to MLCLIPSim.forward. No scores are reused.
+the aggregation formula is identical to MLCLIPSim.forward.
 """
 from __future__ import annotations
 

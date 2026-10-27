@@ -99,7 +99,6 @@ def cheng_point(model, device):
     return fn
 
 
-# Feature-annoying distortions (non-ROI)
 def gaussian_noise_point(std01):
     # std01 in [0,1] space; 0.01 ~= 2.55/255
     std01 = float(std01)
@@ -121,7 +120,6 @@ def poisson_noise_point(scale=1.0):
 def gaussian_blur_point(sigma):
     sigma = float(sigma)
     def fn(im: Image.Image):
-        # PIL GaussianBlur uses radius parameter (close enough for our use)
         return im.filter(ImageFilter.GaussianBlur(radius=sigma))
     return fn
 
@@ -151,7 +149,6 @@ def motion_blur_point(k: int):
 
 def chroma_jitter_point(delta=6.0, seed=None):
     """
-    Chroma-only-ish jitter:
       Convert to YCbCr, add small bias to Cb/Cr, convert back.
     delta in [0..255] range (e.g., 4~12)
     """
@@ -198,7 +195,6 @@ def saturation_point(factor=0.97):
 def resize_down_up_point(scale=0.75, interp="bicubic"):
     """
     Downsample then upsample back to original size.
-    Very common 'PSNR not too low but task drops' distortion.
     """
     scale = float(scale)
     interp = str(interp).lower()
@@ -251,8 +247,6 @@ def main():
     # Define ALL POINTS
     points: List[Tuple[str, callable, str]] = []
 
-    # ---- codec backbone (RD + MOS + task) ----
-    # include q=20 as well (often yields PSNR still decent but task drops)
     for q in [10, 15, 20, 25, 30, 40, 50, 70]:
         points.append((f"jpeg420_q{q}", jpeg_point(q, "4:2:0"), "codec"))
         points.append((f"jpeg444_q{q}", jpeg_point(q, "4:4:4"), "codec"))
@@ -266,9 +260,6 @@ def main():
         for q, m in cheng_models.items():
             points.append((f"cheng_q{q}", cheng_point(m, device), "codec"))
 
-    # ---- resampling: extremely task-sensitive ----
-    # Add a stronger down-up level (0.35) to reach PSNR ~26-32 on many images.
-    # Keep bilinear+bicubic for diversity.
     points += [
         ("resize_0.85_bicubic", resize_down_up_point(0.85, "bicubic"), "resample"),
         ("resize_0.85_bilinear", resize_down_up_point(0.85, "bilinear"), "resample"),
@@ -284,12 +275,11 @@ def main():
     ]
 
     # ---- noise / blur / color / tone ----
-    # Target PSNR range: ~26-40 overall coverage.
     points += [
         # Noise (std in [0,1] space; 0.02 ~= 5.1/255)
         ("noise_g0.010", gaussian_noise_point(0.010), "noise"),
         ("noise_g0.020", gaussian_noise_point(0.020), "noise"),
-        ("noise_g0.030", gaussian_noise_point(0.030), "noise"),  # slightly softer than 0.035, more "codec-like"
+        ("noise_g0.030", gaussian_noise_point(0.030), "noise"),
         ("poisson_x1", poisson_noise_point(1.0), "noise"),
         ("poisson_x0.6", poisson_noise_point(0.6), "noise"),
         ("poisson_x0.4", poisson_noise_point(0.4), "noise"),
@@ -298,22 +288,18 @@ def main():
         ("blur_s0.8", gaussian_blur_point(0.8), "blur"),
         ("blur_s1.2", gaussian_blur_point(1.2), "blur"),
         ("blur_s1.8", gaussian_blur_point(1.8), "blur"),
-        ("blur_s2.4", gaussian_blur_point(2.4), "blur"),  # slightly less extreme than 2.6
+        ("blur_s2.4", gaussian_blur_point(2.4), "blur"),
         ("motion_k9", motion_blur_point(9), "blur"),
         ("motion_k13", motion_blur_point(13), "blur"),
 
-        # Color/chroma (distribution shift; keep moderate levels)
         ("chroma_d6", chroma_jitter_point(delta=6.0, seed=args.seed + 7), "color"),
         ("chroma_d12", chroma_jitter_point(delta=12.0, seed=args.seed + 11), "color"),
 
-        # Tone shifts: keep "moderate" ones closer to codec side effects + a few stronger ones
-        # Moderate (more realistic)
         ("gamma_0.90", gamma_point(0.90), "tone"),
         ("gamma_1.10", gamma_point(1.10), "tone"),
         ("contrast_0.85", contrast_point(0.85), "tone"),
         ("contrast_1.15", contrast_point(1.15), "tone"),
 
-        # Strong (hard distribution shift; keep only a couple)
         ("gamma_0.75", gamma_point(0.75), "tone"),
         ("gamma_1.25", gamma_point(1.25), "tone"),
         ("contrast_0.70", contrast_point(0.70), "tone"),
@@ -365,7 +351,6 @@ def main():
         for r in per_image_stats:
             f.write(json.dumps(r) + "\n")
 
-    # point stats: include p5/p50/p95 (useful for tuning levels)
     point_stats = {}
     for pid, v in point_psnr.items():
         point_stats[pid] = {

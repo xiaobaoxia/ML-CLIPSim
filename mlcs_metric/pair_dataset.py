@@ -1,4 +1,3 @@
-# pair_dataset.py
 import os
 import json
 import random
@@ -65,7 +64,6 @@ class PairMetricDataset(Dataset):
         # ---------- image transform ----------
         self.tf = transforms.Compose([
             transforms.Resize((image_size,image_size)),
-            # transforms.CenterCrop(image_size),
             transforms.ToTensor(),
         ])
 
