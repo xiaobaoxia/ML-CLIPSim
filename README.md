@@ -1,6 +1,6 @@
 # ML-CLIPSim
 
-[ML-CLIPSim: Multi-Layer CLIP Similarity for Machine-Oriented Image Quality](https://arxiv.org/abs/2605.09479)
+Paper: [ML-CLIPSim: Multi-Layer CLIP Similarity for Machine-Oriented Image Quality](https://arxiv.org/abs/2605.09479)
 
 ## Install the metric
 
